@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import VMlogo from "../assets/Logos/ATS.svg";
+import ATSlogo from "../assets/Logos/ATS.svg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const Login = () => {
   return (
     <section className="py-5 min-h-screen text-[#1C1C1C] flex flex-col justify-center items-center gap-10 xs:py-10 ">
       <div>
-        <img src={VMlogo} alt="VM-logo-image" />
+        <img src={ATSlogo} alt="VM-logo-image" />
       </div>
 
       <div className="bg-white rounded-sm flex flex-col justify-start items-center lg:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
@@ -29,7 +29,7 @@ const Login = () => {
         <div className="w-full xs:px-5 md:px-10">
           <form className="space-y-3 w-full" onSubmit={handleSubmit}>
             <div className="">
-              <label htmlFor="email" className="block   ">
+              <label htmlFor="email" className="block">
                 Email
               </label>
               <input
@@ -58,14 +58,14 @@ const Login = () => {
             </div>
             <div className="flex items-center flex-wrap  xs:justify-center xs:items-center xs:gap-2 md:flex-nowrap md:gap-4 md:justify-between ">
               <div className="flex items-center">
-              <input
-      id="rememberMe"
-      name="rememberMe"
-      type="checkbox"
-      checked={rememberMe}
-      className="w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] checked:bg-[#882EFD] focus:ring-transparent hover:bg-[#882EFD]"
-      onChange={(e) => setRememberMe(e.target.checked)}
-    />
+                <input
+                  id="rememberMe"
+                  name="rememberMe"
+                  type="checkbox"
+                  checked={rememberMe}
+                  className="w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] checked:bg-[#882EFD] focus:ring-transparent hover:bg-[#882EFD]"
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
                 <label htmlFor="rememberMe" className="ml-2 text-sm">
                   Remember me
                 </label>
