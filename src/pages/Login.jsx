@@ -17,7 +17,7 @@ const Login = () => {
         <img src={VMlogo} alt="VM-logo-image" />
       </div>
 
-      <div className="bg-white rounded-md flex flex-col justify-start items-center lg:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+      <div className="bg-white rounded-sm flex flex-col justify-start items-center lg:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
         <div className=" text-center py-4 w-full">
           <h1 className=" font-bold pt-3 xs:text-[1.5rem] md:text-[1.7rem] lg:text-[2rem]">
             Sign in to your account
@@ -37,7 +37,7 @@ const Login = () => {
                 name="email"
                 type="email"
                 required
-                className="w-full px-3 py-2 mt-1 border-[1px] bg-[#F4F4F4] border-[#E5E9E5] rounded-md  focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
+                className="w-full px-3 py-2 mt-1 border-[1px] bg-[#F4F4F4] border-[#E5E9E5] rounded-xl  focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -51,21 +51,21 @@ const Login = () => {
                 name="password"
                 type="password"
                 required
-                className="w-full px-3 py-2 mt-1 border-[1px] bg-[#F4F4F4] border-[#E5E9E5] rounded-md  focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
+                className="w-full px-3 py-2 mt-1 border-[1px] bg-[#F4F4F4] border-[#E5E9E5] rounded-xl  focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="flex items-center flex-wrap  xs:justify-center xs:items-center xs:gap-2 md:flex-nowrap md:gap-4 md:justify-between ">
               <div className="flex items-center">
-                <input
-                  id="rememberMe"
-                  name="rememberMe"
-                  type="checkbox"
-                  checked={rememberMe}
-                  className="w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] checked:bg-[#882EFD] "
-                  onChange={(e) => setRememberMe(e.target.checked)}
-                />
+              <input
+      id="rememberMe"
+      name="rememberMe"
+      type="checkbox"
+      checked={rememberMe}
+      className="w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] checked:bg-[#882EFD] focus:ring-transparent hover:bg-[#882EFD]"
+      onChange={(e) => setRememberMe(e.target.checked)}
+    />
                 <label htmlFor="rememberMe" className="ml-2 text-sm">
                   Remember me
                 </label>
@@ -84,7 +84,7 @@ const Login = () => {
                 type="submit"
                 className="text-white bg-[#882EFD] rounded-md text-md px-12 py-2 w-full"
               >
-                Login
+                Sign in
               </button>
             </div>
             <div className="text-center text-sm w-full pb-10 ">
