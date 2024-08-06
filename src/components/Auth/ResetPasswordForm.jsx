@@ -59,7 +59,7 @@ const ResetPasswordForm = () => {
   return (
     <form className="space-y-3 w-full" onSubmit={handleSubmit}>
         <label htmlFor="Verification-code" className="block">Verification code</label>
-      <div onPaste={handlePaste} className="xs:gap-1 flex justify-center gap-3 items-center">
+      <div onPaste={handlePaste} className="xs:gap-1 flex justify-center sm:gap-3 items-center">
         {otp.map((digit, index) => (
           <React.Fragment key={index}>
             {index === 3 && <span className="text-xl text-[#999999]">-</span>}
