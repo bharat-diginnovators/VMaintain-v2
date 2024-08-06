@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       screens: {
-        'xs': '320px', // Add an extra small screen at 480px
+        'xs': '320px', 
+        'xs-1': '375px', 
+         
+        
       },
     },
   },

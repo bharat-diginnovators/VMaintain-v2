@@ -53,13 +53,13 @@ const OtpForm = () => {
 
 
   return (
-    <form className="space-y-3 w-full">
-      <div onPaste={handlePaste} className="flex justify-center  gap-3 items-center">
+    <form className="space-y-3">
+      <div onPaste={handlePaste} className="xs:gap-1 flex justify-center  sm:gap-3 items-center">
         {otp.map((digit, index) => (
           <React.Fragment key={index}>
             {index === 3 && <span className="text-xl text-[#999999]">-</span>}
             <input
-              className="w-[2.86rem] h-[2.5rem] text-[#882EFD]  border-[.5px] bg-[#F7F7F8] text-center border-[#EAEAEA] rounded-xl focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
+              className="xs:w-[2.2rem] xs:h-[2rem] xs-1:w-[2.86rem] xs-1:h-[2.5rem]  text-[#882EFD]  border-[.5px] bg-[#F7F7F8] text-center border-[#EAEAEA] rounded-xl focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD]"
               type="text"
               maxLength="1"
               placeholder=""

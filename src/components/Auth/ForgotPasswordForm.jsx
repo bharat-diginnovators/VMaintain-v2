@@ -24,7 +24,7 @@ const ForgotPasswordForm = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
     </div>
- 
+     
    
     <div className="pt-4 py-1">
     <Button type="submit" text="Continue" className='text-white bg-[#882EFD]'/>

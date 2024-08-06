@@ -25,7 +25,7 @@ const AuthTemplate = ({ type, title, subTitle, link, text,subTitleTwo }) => {
         <img src={ATSlogo} alt="VM-logo-image" />
       </div>
 
-      <div className="bg-white xs:mx-2 rounded-sm flex flex-col justify-start items-center md:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+      <div className=" bg-white xs:mx-2 rounded-sm flex flex-col justify-start items-center md:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
         <div className=" text-center py-4 w-full">
           <Heading text={title} className="pt-3" />
           <Subheading text={subTitle} className="pb-8 text-sm" />
