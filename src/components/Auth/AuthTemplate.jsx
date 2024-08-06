@@ -7,18 +7,17 @@ import LoginForm from "./LoginForm";
 import { Link } from "react-router-dom";
 import ForgotPasswordForm from "./ForgotPasswordForm";
 import OtpForm from "./OtpForm";
+import ResetPasswordForm from "./ResetPasswordForm";
 
 const AuthTemplate = ({ type, title, subTitle, link, text,subTitleTwo }) => {
-  let path;
-  if (type === "sign-in") {
-    path = "/sign-up";
-  } else if (type === "forgot-password") {
-    path = "/sign-in";
-  } else if (type === "otp") {
-    path = "/otp";
-  } else {
-    path = "/sign-in";
-  }
+    const paths = {
+        "sign-in": "/sign-up",
+        "forgot-password": "/sign-in",
+        "otp": "/sign-in",
+        "reset-password": "/sign-in"
+      };
+      
+      const path = paths[type] || "/sign-in";
 
   return (
     <section className="py-5 min-h-screen text-[#1C1C1C] flex flex-col justify-center items-center gap-10 xs:py-10 ">
@@ -39,7 +38,9 @@ const AuthTemplate = ({ type, title, subTitle, link, text,subTitleTwo }) => {
             <ForgotPasswordForm />
           ) : type === "otp" ? (
             <OtpForm/>
-          ): (
+          ):  type === "reset-password" ? (
+            <ResetPasswordForm/>
+          ):(
             <SignUpForm />
           )}
 

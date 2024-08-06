@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import ForgotPassword from "./pages/ForgotPassword";
 import Otp from "./pages/Otp";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
       <Route path="/sign-up"  element={<SignUp/>}/>
       <Route path="/forgot-password" element={<ForgotPassword/>}/>
       <Route path="/otp" element={<Otp/>}/>
+      <Route path="/reset-password" element={<ResetPassword/>}/>
     </Routes>
   );
 }
