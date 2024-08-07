@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,6 +12,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-  background: #F7F6F9;
+body {
+  background: #f7f6f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #882efd; /* Purple color */
+  border-radius: 20px;
+  border: 3px solid #fff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7b1fa2; /* Darker purple on hover */
 }
