@@ -1,8 +1,11 @@
 import React from 'react'
+import Profile from './Profile'
 
 const Teams = () => {
   return (
-    <div>Teams</div>
+   <section className='w-full p-4'>
+ <Profile/>
+   </section>
   )
 }
 

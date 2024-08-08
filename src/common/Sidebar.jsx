@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="w-48 flex flex-col gap-2 min-h-[90svh] px-4 py-5">
+    <aside className="w-48 flex flex-col gap-2 min-h-[90svh] px-4 py-5 sticky top-[4.6rem]">
       <Link to="/dashboard">
         <div className="flex justify-start items-center group gap-2 rounded-sm hover:bg-[#E7D5FF] overflow-hidden cursor-pointer">
           <div className="group-hover:bg-[#D3CCDC] rounded-sm w-9 h-9 flex justify-center items-center">

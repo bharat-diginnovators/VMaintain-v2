@@ -5,9 +5,9 @@ import view from "../../assets/Icons/view.svg";
 
 const data = [
   { id: 1, name: "Wordpress", count: "07" },
-  { id: 2, name: "Joomla", count: "14" },
-  { id: 3, name: "Drupal", count: "05" },
-  { id: 4, name: "Magento", count: "11" },
+  { id: 2, name: "Plugins", count: "14" },
+  { id: 3, name: "Themes", count: "05" },
+  { id: 4, name: "Translations", count: "11" },
 ];
 
 const Overview = () => {
@@ -17,7 +17,7 @@ const Overview = () => {
         <div>
           <h1 className="font-semibold">Updates Overview</h1>
           <p className="text-sm">Last updated June 20, 2024</p>
-          <div className="flex font-medium gap-8 py-4">
+          <div className="flex font-medium gap-x-32 py-4">
             <p>Total Updates</p>
             <p>250</p>
           </div>

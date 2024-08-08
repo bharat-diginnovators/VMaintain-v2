@@ -72,8 +72,8 @@ const Client = () => {
       <p className="py-2">Clients Information</p>
       <div className="h-[246px] overflow-y-auto overflow-x-auto border-[1px] rounded-sm custom-scrollbar">
         <table className="min-w-full bg-white rounded-sm overflow-hidden">
-          <thead>
-            <tr className="bg-gray-200">
+          <thead >
+            <tr className="bg-[#F7F7F8] !sticky top-[.2px]" >
               <th className="py-2 text-left px-2  border-b">Client Name</th>
               <th className="py-2 text-left px-2 border-b">Email</th>
               <th className="py-2 text-left px-2 border-b">Contact</th>
