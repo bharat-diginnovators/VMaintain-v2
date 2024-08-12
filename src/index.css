@@ -33,3 +33,23 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #7b1fa2; /* Darker purple on hover */
 }
+
+
+.custom-shadow{
+  box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08) !important;
+}
+
+/* Example: Adjust these selectors according to the actual DOM structure */
+.rdtd-select-rect {
+  background-color: #d1d1d1 !important; /* Default gray background */
+  border-radius: 4px !important;
+  border-color: #d1d1d1 !important;
+  outline: none !important; /* Remove the outer ring */
+}
+
+.rdtd-select-rect:checked {
+  background-color: #882EFD !important; /* Purple background when selected */
+  border-color: #882EFD !important;
+}
+
+

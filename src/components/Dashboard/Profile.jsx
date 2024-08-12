@@ -42,7 +42,7 @@ const Profile = () => {
   return (
     <section className="w-full p-2 lg:mb-16">
       <h1 className="font-semibold text-lg py-2">Profile</h1>
-      <div className="flex justify-start items-start w-full rounded-sm overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+      <div className="flex justify-start items-start w-full rounded-sm overflow-hidden custom-shadow">
         <div className="w-[10%] -mr-6 mt-6">
           <div className="w-full flex justify-end py-2 relative">
             <img src={profile} alt="profile" className="w-24" />

@@ -42,7 +42,7 @@ const Dropdown = ({
   }, []);
 
   return (
-    <div className={`  ${width} ${customClass}`} ref={dropdownRef}>
+    <div className={`relative  ${width} ${customClass}`} ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
         className={`flex justify-between w-full  items-center px-3 py-1.5 ${bgColor} border ${borderColor} ${focusColor} sm:text-sm rounded-md ${textColor}`}
@@ -52,7 +52,7 @@ const Dropdown = ({
       </button>
       {isOpen && (
         <ul
-          className={`absolute z-10  mt-1 ${menuWidth || width} ${bgColor} border ${borderColor} rounded-md shadow-lg`}
+          className={`absolute z-10 mt-1 ${menuWidth} ${bgColor} border ${borderColor} rounded-md shadow-lg`}
         >
           {options.map((option, index) => (
             <li

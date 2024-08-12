@@ -16,7 +16,7 @@ const LineChartComponent = () => {
     const [selectedWeek, setSelectedWeek] = useState('This week');
   
     return (
-      <div className="p-4 border rounded-lg shadow-sm overflow-x-auto">
+      <div className="p-4 border rounded-lg custom-shadow  overflow-x-auto">
         <div className="flex justify-between items-center mb-2">
           <h2 className="font-medium">Analytics</h2>
           <div className="flex items-center gap-12">

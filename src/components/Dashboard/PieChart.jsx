@@ -10,7 +10,7 @@ const data = [
 const COLORS = ['#882EFD', '#E6E8EA']; 
 
 const PieChartComponent = () => (
-  <div className="p-4 border rounded-lg shadow-sm">
+  <div className="p-4 border rounded-lg custom-shadow">
     <div className='flex justify-between'>
       <div>
       <h2 className="font-medium mb-2">Response Rate</h2>
