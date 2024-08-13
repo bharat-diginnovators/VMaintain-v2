@@ -16,23 +16,30 @@ body {
   background: #f7f6f9;
 }
 
+.custom-scrollbar {
+  overflow: auto; /* Ensure both scrollbars can appear */
+  white-space: nowrap; /* Prevent content from wrapping, forcing horizontal scrolling */
+}
+
 .custom-scrollbar::-webkit-scrollbar {
-  width: 12px;
+  width: 12px;  /* Vertical scrollbar width */
+  height: 12px; /* Horizontal scrollbar height */
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #ffffff; /* Track background color */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #882efd; /* Purple color */
-  border-radius: 20px;
-  border: 3px solid #fff;
+  background-color: #882efd; /* Purple color for the scrollbar thumb */
+  border-radius: 20px; /* Rounded corners */
+  border: 3px solid #fff; /* Padding around the scrollbar thumb */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #7b1fa2; /* Darker purple on hover */
 }
+
 
 
 .custom-shadow{

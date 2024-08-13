@@ -42,19 +42,19 @@ const Profile = () => {
   return (
     <section className="w-full p-2 lg:mb-16">
       <h1 className="font-semibold text-lg py-2">Profile</h1>
-      <div className="flex justify-start items-start w-full rounded-sm overflow-hidden custom-shadow">
-        <div className="w-[10%] -mr-6 mt-6">
-          <div className="w-full flex justify-end py-2 relative">
+      <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow flex-wrap">
+        <div className="xs:w-full md:w-[10%] -mr-6 mt-6 ">  
+          <div className="xs:justify-center w-full flex md:justify-end py-2 relative">
             <img src={profile} alt="profile" className="w-24" />
             <img src={upload} alt="upload" className="absolute bottom-3" />
           </div>
         </div>
-        <div className="w-[90%] p-4">
+        <div className="xs:w-full md:w-[90%] p-4 ">
           <form
-            className="space-y-4 px-10 py-4 flex flex-col w-full rounded-sm overflow-hidden"
+            className="space-y-4 xs:px-2 md:px-10 py-4 flex flex-col w-full rounded-sm overflow-hidden"
             onSubmit={handleSubmit}
           >
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="firstName" className="block">
                   First Name
@@ -82,7 +82,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="email" className="block">
                   Email
@@ -110,7 +110,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="country" className="block">
                   Country
@@ -120,6 +120,8 @@ const Profile = () => {
                   selected={formData.country}
                   onSelect={(value) => handleDropdownChange("country", value)}
                   placeholder=""
+                  width="w-full"
+                  menuWidth="xs:w-1/2 lg:w-2/6"
                 />
               </div>
               <div className="w-full">
@@ -132,10 +134,12 @@ const Profile = () => {
                   onSelect={(value) => handleDropdownChange("city", value)}
                   placeholder=""
                   textColor=""
+                  menuWidth="xs:w-1/2 lg:w-2/6"
+
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full">
+            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="phoneNumber" className="block">
                   Phone Number

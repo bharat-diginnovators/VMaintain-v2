@@ -14,6 +14,7 @@ import Checkbox from "../../Core/Checkbox";
 import { MdRadioButtonChecked } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import Dropdown from "../../Core/Dropdown";
+import Columns from "./Modals/Columns";
 
 const data = [
   {
@@ -548,6 +549,14 @@ const Sites = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRows, setSelectedRows] = useState([]);
+  const [modal ,setModal] = useState(false)
+
+   const handleModal =()=>{
+    setModal(!modal)
+   }
+
+
+
 
   const filteredData = data.filter(
     (item) =>
@@ -722,16 +731,19 @@ const Sites = () => {
       sortable: true,
     },
     {
-      name: <FaRegSquarePlus size={20} className="cursor-pointer" />,
+      name: (<div className=""><FaRegSquarePlus size={20} className="cursor-pointer" onClick={handleModal} />
+            
+      </div>),
       cell: () => <></>,
       width: "60px",
     },
   ];
 
   return (
-    <div className="px-4 py-2 bg-white rounded-lg custom-shadow overflow-x-auto ">
+    <div className="relative px-4 py-2 bg-white rounded-lg custom-shadow m-2">
       {/* Header with dropdowns, search, and filters */}
-      <div className="flex justify-between items-center mb-4 flex-wrap overflow-x-auto px-2">
+     
+ <div className="flex justify-between items-center mb-4 px-2 custom-scrollbar ">
         <div className="flex gap-8 items-center">
           <div className="text-lg">
             <p>Sites</p>
@@ -758,51 +770,61 @@ const Sites = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-4">
-          <div className="relative">
+        <div className="flex items-center justify-center gap-4 ">
+          <div className="relative min-w-[200px] mx-4 ">
             <Input
               id="search"
               name="search"
               type="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full"
+              className="w-full !py-[7px]"
               placeholder="Search"
+            
             />
-            <button className="absolute  w-9 h-9 right-1 top-2 bg-[#F4F4F4]">
+            <button className="absolute  w-6 h-6 right-2 top-3 bg-[#F4F4F4]">
               <img src={search} alt="search" />
             </button>
           </div>
-        <div className="flex space-x-4 mb-4">
+        <div className="flex space-x-4 ">
        
         <Dropdown
-          options={["", "active", "inactive"]}
+          options={["Tags", "Stag", "Product", "Development"]}
           selected={""}
           onChange={(value) => handleFilterChange("status", value)}
           label="Filter by Status"
           width="400px"
           placeholder="Filter by: Tags"
-          menuWidth="900px"
+          menuWidth="w-[140px]"
 
         />
         
         <Dropdown
-          options={["", "Good", "Bad", "Worst", "Warning", "Critical"]}
+          options={[ "Good", "Bad", "Worst", "Warning", "Critical"]}
           selected={""}
           onChange={(value) => handleFilterChange("siteHealth", value)}
           label="Filter by Site Health"
-          width="400px"
+          width="w-[150px]"
           placeholder="Bulk Actions"
 
         />
       </div>
-          <button className="bg-none border-none custom-shadow p-2 cursor-pointer">
-            <RxDashboard  size={20} className="text-[#1c1c1cbd]" />
+         <div className="">
+
+         <button className="bg-none border-none custom-shadow p-2 cursor-pointer">
+            <RxDashboard  size={18} className="text-[#1c1c1cbd]" />
           </button>
+       {modal && ( <div className="absolute right-10 top-28 border-2 border-green-900">
+               <Columns modal={modal}/>
+             </div>)}
+         </div>
+        
         </div>
       </div>
-
-      <DataTable
+     
+     
+      
+       <DataTable
         columns={columns}
         data={filteredData.slice(
           (currentPage - 1) * entries,
@@ -819,16 +841,19 @@ const Sites = () => {
          
         }}
       />
+      
+
+     
 
       {/* Pagination and Entries Information */}
-      <div className="flex justify-between items-center mt-4 text-[#1c1c1c83]">
+      <div className="flex justify-between items-center flex-wrap mt-4 text-[#1c1c1c83] custom-scrollbar">
         <div>
           Showing {Math.min((currentPage - 1) * entries + 1, totalEntries)} to{" "}
           {Math.min(currentPage * entries, totalEntries)} of {totalEntries}{" "}
           entries
         </div>
 
-        <div className="flex items-center">
+        <div className="flex items-center custom-scrollbar">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             className="p-2 bg-none border border-[#882EFD] rounded-full mr-2"
@@ -845,7 +870,7 @@ const Sites = () => {
                   className={`h-9 w-9 text-white rounded-full mr-2 flex justify-center items-center cursor-pointer ${
                     pageNumber === currentPage
                       ? "bg-[#882EFD]"
-                      : "bg-[#F0F0F0]  border border-[#882EFD] text-purple-600"
+                      : "bg-[#F0F0F0]  border border-[#882EFD] !text-purple-600"
                   }`}
                   onClick={() => handlePageChange(pageNumber)}
                 >
