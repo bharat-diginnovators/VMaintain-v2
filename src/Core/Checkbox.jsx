@@ -8,7 +8,7 @@ const Checkbox = ({ id, name,checked, onChange, className, label }) => (
       type="checkbox"
       checked={checked}
       onChange={onChange}
-      className={`w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] ${checked? 'focus:!bg-[#882EFD]':''} checked:bg-[#882EFD] checked:hover:bg-[#882EFD]  focus:ring-transparent hover:bg-[#882EFD] ${className}`}
+      className={`w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] ${checked? 'focus:!bg-[#882EFD]':''} checked:bg-[#882EFD] focus:ring-transparent checked:hover:bg-[#882EFD] ${className}`}
     />
     <label htmlFor={id} className="ml-2 text-sm">
       {label}

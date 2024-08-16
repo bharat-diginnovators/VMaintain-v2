@@ -4,6 +4,7 @@ import upload from "../../assets/Icons/upload.svg";
 import Input from "../../Core/Input";
 import Button from "../../Core/Button";
 import Dropdown from "../../Core/Dropdown"; 
+
 const Profile = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -15,6 +16,8 @@ const Profile = () => {
     phoneNumber: "",
     organizationName: "",
   });
+
+  const [profileImage, setProfileImage] = useState(profile);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,6 +39,17 @@ const Profile = () => {
     console.log(formData);
   };
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setProfileImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const countryOptions = ["USA", "Canada", "UK", "Germany"];
   const cityOptions = ["New York", "Toronto", "London", "Berlin"];
 
@@ -43,14 +57,24 @@ const Profile = () => {
     <section className="w-full p-2 lg:mb-16">
       <h1 className="font-semibold text-lg py-2">Profile</h1>
       <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow flex-wrap">
+          
+          {/* Upload profile images  */}
         <div className="xs:w-full md:w-[10%] -mr-6 mt-6 ">  
           <div className="xs:justify-center w-full flex md:justify-end py-2 relative">
-            <img src={profile} alt="profile" className="w-24" />
-            <img src={upload} alt="upload" className="absolute bottom-3" />
+            <img src={profileImage} alt="profile" className="w-24 h-24 object-cover rounded-full border-2 border-[#882EFD]" />
+            <label className="absolute bottom-3 cursor-pointer">
+              <img src={upload} alt="upload" />
+              <input 
+                type="file" 
+                accept="image/*" 
+                onChange={handleImageUpload} 
+                className="hidden" 
+              />
+            </label>
           </div>
         </div>
         <div className="xs:w-full md:w-[90%] p-4 ">
-          <form
+        <form
             className="space-y-4 xs:px-2 md:px-10 py-4 flex flex-col w-full rounded-sm overflow-hidden"
             onSubmit={handleSubmit}
           >

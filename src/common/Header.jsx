@@ -12,6 +12,7 @@ import downIcon from "../assets/Icons/down.svg";
 import Dropdown from "../Core/Dropdown";
 import { useSidebar } from "../utils/context";
 import { Link } from "react-router-dom";
+import reload from "../assets/Icons/reload.svg"
 
 const Header = () => {
   const options = ["Workspace 1", "Workspace 2", "Workspace 3", "Workspace 4"];
@@ -27,39 +28,42 @@ const Header = () => {
 
 
   return (
-    <header className="flex justify-between items-center px-5 py-4 bg-white z-[9999]">
-      <div className="flex justify-between items-center xs:gap-10 sm:gap-15 xs:w-[20rem] lg:gap-20 lg:w-[30rem]">
+    <header className="border-b flex justify-between items-center px-5 py-4 bg-white z-[9999]">
+      <div className="flex justify-between items-center xs:gap-10 sm:gap-15 xs:w-[20rem] lg:gap-20 lg:w-[34rem]">
         <div className="flex justify-between items-center gap-5 ">
           <button onClick={toggleSidebar}>
-            <img src={menuIcon} alt="menu" className="xs:w-[1rem] md:w-[1.9rem]" />
+            <img src={menuIcon} alt="menu" className="xs:min-w-[1rem] md:min-w-[1.5rem] lg:min-w-[1.5rem] " />
           </button>
           <a href="/dashboard">
-            <img src={logoIcon} alt="logo" className="xs:w-[2.5rem] md:w-[6rem]" />
+            <img src={logoIcon} alt="logo" className="xs:min-w-[2.5rem] md:min-w-[4rem] lg:w-[2rem]" />
           </a>
         </div>
-        <div className="w-full pl-7 xs:hidden md:block">
+        <div className="  xs:hidden md:block">
 
-     
-        <Dropdown
+         <div>
+         <Dropdown
           options={options}
           onSelect={handleSelection}
-          width="!w-full"
+          width="!w-[20rem]"
           placeholder="Workspace Name"
-          menuWidth="lg:w-[19.6rem]"
+          menuWidth="lg:w-[20rem]"
         />
+         </div>
+        
            </div>
       </div>
       <div className="flex justify-between items-center xs:gap-5 lg:gap-5">
-        <div className="flex justify-between items-center xs:gap-4 xs:mr-10">
+        <div className="xs:ml-[-50px] md:ml-[-0px] flex justify-between items-center xs:gap-4">
           <img src={searchIcon} alt="search" className="w-6 cursor-pointer" />
           <img src={speakerIcon} alt="speaker" className="w-6 cursor-pointer" />
+          <img src={reload} alt="speaker" className="w-6 cursor-pointer xs:hidden md:block"/>
         </div>
-        <div className="flex justify-between items-center xs:gap-3 lg:gap-4">
+        <div className="  flex justify-between items-center xs:gap-3 lg:gap-4">
           <img src={helpIcon} alt="help" className="w-6 cursor-pointer xs:hidden md:block" />
           <img src={bellIcon} alt="bell" className="w-6 cursor-pointer xs:hidden md:block" />
           <img src={plusIcon} alt="plus" className="w-6 cursor-pointer xs:hidden md:block" />
-          <div className="flex gap-1 justify-center items-center cursor-pointer">
-          <Link to="/dashboard/profile" className="flex gap-1 justify-center items-center cursor-pointer">
+          <div className=" flex gap-1 justify-center items-center cursor-pointer">
+          <Link to="/dashboard/profile" className="xs:ml-5 md:ml-0 flex gap-1 justify-center items-center cursor-pointer">
             <img src={profileIcon} alt="profile" className="xs:w-12 sm:w-9" />
             <img src={downIcon} alt="down" />
             </Link>

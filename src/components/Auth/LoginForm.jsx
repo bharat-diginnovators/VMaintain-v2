@@ -3,16 +3,20 @@ import Input from '../../Core/Input';
 import Checkbox from '../../Core/Checkbox';
 import Button from '../../Core/Button';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [rememberMe, setRememberMe] = useState(false);
+    const navigate = useNavigate()
   
     const handleSubmit = (event) => {
       event.preventDefault();
       console.log({ email, password, rememberMe });
+      navigate("/dashboard")
+
     };
   
 
@@ -56,14 +60,14 @@ const LoginForm = () => {
       <div className="text-mf">
         <Link
           to="/forgot-password"
-          className="font-medium text-sm underline text-[#882EFD]"
+          className="font-medium text-sm text-[#882EFD]"
         >
           Forgot your password?
         </Link>
       </div>
     </div>
     <div className="pt-4 ">
-    <Button type="submit" text="Sign in" className='text-white bg-[#882EFD]'/>
+    <Button type="submit" text="Sign in" className='text-white bg-[#882EFD]' />
     </div>
   </form>
   )

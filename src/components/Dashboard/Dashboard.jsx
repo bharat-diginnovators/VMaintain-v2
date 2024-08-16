@@ -14,7 +14,7 @@ const Dashboard = () => {
         <div className="">
         <Sidebar />
         </div>
-        <main className="flex-1 bg-white overflow-y-scroll overflow-x-hidden max-h-[80%]">
+        <main className="flex-1 bg-white overflow-y-scroll overflow-x-hidden max-h-[80%] px-4 py-4">
           <Outlet />
           <Footer/>
         </main>

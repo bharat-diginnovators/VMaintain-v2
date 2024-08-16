@@ -11,10 +11,12 @@ import Teams from "./components/Dashboard/Teams";
 import Sites from "./components/Dashboard/Sites";
 import Settings from "./components/Dashboard/Settings";
 import Profile from "./components/Dashboard/Profile";
+import Landing from "./pages/Landing";
 
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Landing />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

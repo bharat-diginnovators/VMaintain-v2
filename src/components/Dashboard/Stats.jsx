@@ -47,7 +47,7 @@ const Stats = () => {
   return (
     <div className=''>
 
-<div className="grid grid-cols-1 xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+<div className=" grid grid-cols-1 xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-2 xs:gap-2 xl:gap-4 ">
       {data.map((item, index) => (
         <div key={index} className=" m-1 rounded-sm flex justify-around items-center px-2  shadow-[0px_0px_3px_rgb(0,0,0,0.2)] min-h-[7rem] lg:min-w-[10rem] xl:w-full ">
           <div className='min-w-12 min-h-12  xl:w-15 xl:h-15'>

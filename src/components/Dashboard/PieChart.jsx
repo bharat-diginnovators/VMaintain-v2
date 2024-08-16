@@ -45,18 +45,27 @@ const PieChartComponent = () => (
           y="50%"
           textAnchor="middle"
           dominantBaseline="middle"
-          className="text-2xl font-bold"
+          className="text-5xl font-bold"
         >
           69%
         </text>
         <text
           x="50%"
-          y="58%"
+          y="59%"
           textAnchor="middle"
           dominantBaseline="middle"
           className="text-base"
         >
-          Response Rate
+          Response 
+        </text>
+        <text
+          x="50%"
+          y="66%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="text-base"
+        >
+         Rate
         </text>
       </PieChart>
     </ResponsiveContainer>

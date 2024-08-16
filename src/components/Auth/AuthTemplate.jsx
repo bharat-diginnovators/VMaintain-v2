@@ -28,7 +28,8 @@ const AuthTemplate = ({ type, title, subTitle, link, text,subTitleTwo }) => {
       <div className=" bg-white xs:mx-2 rounded-sm flex flex-col justify-start items-center md:w-[27.5rem]  shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
         <div className=" text-center py-4 w-full">
           <Heading text={title} className="pt-3" />
-          <Subheading text={subTitle} className="pb-8 text-sm" />
+          {type === "otp" ? (<p className="xs:px-4 pb-8 text-sm"> We have sent a code to: <span className="underline"> abc@pqr.com</span></p>) :( <Subheading text={subTitle} className="pb-8 text-sm" />)
+          }
         {subTitleTwo &&  (<Subheading text={subTitleTwo} className="mt-[-2rem] pb-8 text-sm"/>)}
         </div>
         <div className="w-full xs:px-5 md:px-10">
