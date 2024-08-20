@@ -7,6 +7,7 @@ import Input from "../../Core/Input";
 import search from "../../assets/Icons/Mask group.svg";
 import Checkbox from "../../Core/Checkbox";
 import Columns from "./Modals/Columns";
+import Dropdown from "../../Core/Dropdown";
 
 const data = [
   {
@@ -371,6 +372,11 @@ const ClientData = () => {
     setModal(!modal);
   };
 
+ const handleFilterChange = (value) => {
+  console.log(value)
+    setEntries(Number(value))
+ }
+
   const totalEntries = filteredData.length;
   const totalPages = Math.ceil(totalEntries / entries);
 
@@ -492,20 +498,15 @@ const ClientData = () => {
             </label>
             </div>
            <div>
-           <select
-              id="entries"
-              value={entries}
-              onChange={(e) => {
-                setEntries(Number(e.target.value));
-                setCurrentPage(1);
-              }}
-              className="border border-gray-200 rounded px-8 py-1"
-            >
-              <option value={10}>10</option>
-              <option value={25}>25</option>
-              <option value={50}>50</option>
-              <option value={100}>100</option>
-            </select>
+           <Dropdown
+              options={["10", "25", "50", "100"]}
+              onSelect={(value) => handleFilterChange(value)}
+              label="10"
+              width="w-[60px]"
+              placeholder="10"
+              menuWidth="w-[60px]"
+              bgColor="bg-white"
+            />
            </div>
               <div>
               <span className="ml-2 text-[#1c1c1c]">entries</span>

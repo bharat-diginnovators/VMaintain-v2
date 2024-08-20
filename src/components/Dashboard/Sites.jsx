@@ -71,11 +71,14 @@ const Sites = () => {
   });
 
   const handleFilterChange = (filterType, value) => {
-    console.log("Filter change detected:", filterType, value); // Add this
+    // console.log("Filter change detected:", filterType, value); 
     if (filterType === "status") {
       setStatusFilter(value);
     } else if (filterType === "siteHealth") {
       setSiteHealthFilter(value);
+    }
+    else if (filterType === "entries") {
+      setEntries(Number(value));
     }
     setCurrentPage(1);
   };
@@ -292,25 +295,27 @@ const Sites = () => {
           <div className="text-lg">
             <p>Sites</p>
           </div>
-          <div>
+          <div className="flex justify-between items-center">
+            <div>
             <label htmlFor="entries" className="px-2">
               Show
             </label>
-            <select
-              id="entries"
-              value={entries}
-              onChange={(e) => {
-                setEntries(Number(e.target.value));
-                setCurrentPage(1);
-              }}
-              className="border border-gray-200 rounded px-8 py-1"
-            >
-              <option value={10}>10</option>
-              <option value={25}>25</option>
-              <option value={50}>50</option>
-              <option value={100}>100</option>
-            </select>
+            </div>
+        
+          
+            <Dropdown
+              options={["10", "25", "50", "100"]}
+              onSelect={(value) => handleFilterChange("entries", value)}
+              label="10"
+              width="w-[60px]"
+              placeholder="10"
+              menuWidth="w-[60px]"
+              bgColor="bg-white"
+            />
+            <div>
             <span className="ml-2 ">entries</span>
+
+            </div>
           </div>
         </div>
 
