@@ -59,8 +59,8 @@ const Profile = () => {
       <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow flex-wrap">
           
           {/* Upload profile images  */}
-        <div className="xs:w-full md:w-[10%] -mr-6 mt-6 ">  
-          <div className="xs:justify-center w-full flex md:justify-end py-2 relative">
+        <div className="xs:w-full md:w-[15%] -mr-6 mt-6 ">  
+          <div className="xs:justify-center w-full flex md:justify-end lg:justify-start lg:pl-2  py-2 relative ">
             <img src={profileImage} alt="profile" className="w-24 h-24 object-cover rounded-full border-2 border-[#882EFD]" />
             <label className="absolute bottom-3 cursor-pointer">
               <img src={upload} alt="upload" />
@@ -73,12 +73,12 @@ const Profile = () => {
             </label>
           </div>
         </div>
-        <div className="xs:w-full md:w-[90%] p-4 ">
+        <div className="xs:w-full md:w-[85%] p-4 ">
         <form
             className="space-y-4 xs:px-2 md:px-10 py-4 flex flex-col w-full rounded-sm overflow-hidden"
             onSubmit={handleSubmit}
           >
-            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
+            <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="firstName" className="block">
                   First Name
@@ -106,7 +106,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
+            <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="email" className="block">
                   Email
@@ -134,7 +134,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
+            <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="country" className="block">
                   Country
@@ -163,7 +163,7 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 w-full xs:flex-wrap md:flex-nowrap">
+            <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="phoneNumber" className="block">
                   Phone Number

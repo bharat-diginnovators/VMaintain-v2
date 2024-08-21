@@ -35,7 +35,7 @@ const Header = () => {
             <img src={menuIcon} alt="menu" className="xs:min-w-[1rem] md:min-w-[1.5rem] lg:min-w-[1.5rem] " />
           </button>
           <a href="/dashboard">
-            <img src={logoIcon} alt="logo" className="xs:min-w-[2.5rem] md:min-w-[4rem] lg:w-[2rem]" />
+            <img src={logoIcon} alt="logo" className="xs:max-w-[3.5rem] md:min-w-[4rem] lg:w-[2rem]" />
           </a>
         </div>
         <div className="  xs:hidden md:block">
@@ -44,9 +44,9 @@ const Header = () => {
          <Dropdown
           options={options}
           onSelect={handleSelection}
-          width="!w-[20rem]"
+          width="md:!w-[15rem] lg:!w-[20rem]"
           placeholder="Workspace Name"
-          menuWidth="lg:w-[20rem]"
+          menuWidth="md:w-[15rem] lg:lg:w-[20rem]"
         />
          </div>
         

@@ -3,58 +3,8 @@ import editIcon from "../../assets/Icons/edit.svg";
 import deleteIcon from "../../assets/Icons/globblue.svg";
 import viewIcon from "../../assets/Icons/view.svg";
 import add from "../../assets/Icons/add.svg";
+import { clients } from "../../Data/data";
 
-const clients = [
-  {
-    id: 1,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 2,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 3,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 4,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 5,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 6,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 7,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  },
-  {
-    id: 8,
-    name: "Aditya Das",
-    email: "aditya.d@diginnovat...",
-    contact: "+91 75291 64682",
-  }
-  
-];
 
 const Client = () => {
   return (

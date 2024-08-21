@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Dropdown from '../../Core/Dropdown';
 
 const data = [
   { name: '10 Jun', Dummy1: 1500, Dummy2: 1000 },
@@ -14,7 +15,11 @@ const data = [
 
 const LineChartComponent = () => {
     const [selectedWeek, setSelectedWeek] = useState('This week');
-  
+     
+   const handleFilterChange = (value) =>{
+      setSelectedWeek(value)
+   }
+
     return (
       <div className="p-4 border rounded-lg custom-shadow  overflow-x-auto">
         <div className="flex justify-between items-center mb-2">
@@ -28,15 +33,16 @@ const LineChartComponent = () => {
               <span className="w-3 h-3 bg-[#EA4242] rounded-full inline-block"></span>
               <span>Dummy 2</span>
             </div>
-            <select
-              value={selectedWeek}
-              onChange={(e) => setSelectedWeek(e.target.value)}
-              className=" rounded px-5 bg-[#F7F7F8] border-[.5px] border-[#e4e4e4] focus:border-none focus:outline-none"
-            >
-              <option value="This week">This week</option>
-              <option value="Last week">Last week</option>
-              <option value="Last month">Last month</option>
-            </select>
+         
+            <Dropdown
+              options={["This week", "Last week", "Last month"]}
+              onSelect={(value) => handleFilterChange(value)}
+              label="This week"
+              width="w-[120px]"
+              placeholder="This week"
+              menuWidth="w-[120px]"
+              bgColor="bg-[#F7F7F8]"
+            />
           </div>
         </div>
         <p className="mb-4">Analytics Information</p>
