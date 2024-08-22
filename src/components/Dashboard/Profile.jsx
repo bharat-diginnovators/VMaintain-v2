@@ -56,13 +56,14 @@ const Profile = () => {
   return (
     <section className="w-full p-2 lg:mb-16">
       <h1 className="font-semibold text-lg py-2">Profile</h1>
-      <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow flex-wrap">
+      <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow xs:flex-wrap md:flex-col lg:flex-row">
           
           {/* Upload profile images  */}
-        <div className="xs:w-full md:w-[15%] -mr-6 mt-6 ">  
-          <div className="xs:justify-center w-full flex md:justify-end lg:justify-start lg:pl-2  py-2 relative ">
+        <div className="xs:w-full lg:w-[15%] -mr-6 mt-6 ">  
+          <div className="xs:justify-center w-full flex md:justify-center lg:justify-center lg:pl-2  py-2  ">
+            <div className="relative">
             <img src={profileImage} alt="profile" className="w-24 h-24 object-cover rounded-full border-2 border-[#882EFD]" />
-            <label className="absolute bottom-3 cursor-pointer">
+            <label className="absolute bottom-0 right-1 cursor-pointer">
               <img src={upload} alt="upload" />
               <input 
                 type="file" 
@@ -71,6 +72,8 @@ const Profile = () => {
                 className="hidden" 
               />
             </label>
+            </div>
+           
           </div>
         </div>
         <div className="xs:w-full md:w-[85%] p-4 ">
