@@ -1,0 +1,65 @@
+---
+title: Installation
+---
+
+# Installation
+
+This guide will walk you through setting up the ATS project using React and Vite. Vite is a fast and modern build tool that provides a great development experience for React applications.
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed on your machine:
+
+- **Node.js** (version 14.x or higher)
+- **npm** or **Yarn** (npm comes with Node.js; Yarn is an alternative package manager)
+
+You can verify the installation by running the following commands:
+
+```bash
+node -v
+npm -v
+```
+
+## Setting Up the Project
+### 1. Create a New Vite Project
+To get started, use the following command to create a new React project with Vite:
+
+```bash
+npm create vite@latest my-ats-project --template react
+```
+
+- Replace my-ats-project with your desired project name.
+- The --template react flag tells Vite to set up the project using the React template.
+
+ ### 2. Navigate to the Project Directory
+Once the project is created, navigate into the project directory:
+
+```bash
+cd my-ats-project
+```
+This command will install all the packages required for the project.
+
+## Running the Development Server
+To start the development server and see your application in action, run:
+```bash
+npm run dev
+```
+
+Vite will start a development server and open your project in the default web browser. The server should be running at [http://localhost:5173](http://localhost:5173)
+
+## 4. Open the Project in Your Editor
+Open the project in your preferred code editor (e.g., Visual Studio Code):
+
+```bash
+code .
+```
+
+This command opens the current directory in VS Code.
+
+## Building for Production
+When you're ready to build your project for production, use the following command:
+
+```bash
+npm run build
+```
+Vite will bundle your application and output the static files in the dist directory. These files can be deployed to any static hosting service.

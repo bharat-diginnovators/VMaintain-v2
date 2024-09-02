@@ -1,0 +1,167 @@
+{
+  "name": "ATS Docs",
+  "description": "My documentation site",
+  "sidebar": [
+ 
+  {
+    "group": "Introduction",
+    "pages": [
+      {
+        "title": "Overview",
+        "href": "/introduction/overview",
+        "icon": "info"
+      },
+      {
+        "title": "Key Features",
+        "href": "/introduction/key-features",
+        "icon": "star"
+      },
+      {
+        "title": "Tech Stack",
+        "href": "/introduction/tech-stack",
+        "icon": "book-open"
+      }
+    ]
+  },
+  {
+    "group": "Getting Started",
+    "pages": [
+      {
+        "title": "Installation",
+        "href": "/getting-started/installation",
+        "icon": "download"
+      },
+      {
+        "title": "Directory Structure",
+        "href": "/getting-started/directory-structure",
+        "icon": "folder"
+      }
+    ]
+  },{
+    "group": "Components",
+    "pages": [
+      {
+        "title": "Overview",
+        "href": "/components/overview",
+        "icon": "list"
+      },
+      {
+        "title": "Dropdown",
+        "href": "/components/dropdown",
+        "icon": "chevron-down"
+      },
+      {
+        "title": "Checkbox",
+        "href": "/components/checkbox",
+        "icon": "check-square"
+      },
+      {
+        "title": "Data Table",
+        "href": "/components/data-table",
+        "icon": "table"
+      },
+      {
+        "title": "Pagination",
+        "href": "/components/pagination",
+        "icon": "more-horizontal"
+      },
+      {
+        "title": "Profile Form",
+        "href": "/components/profile-form",
+        "icon": "user"
+      },
+      {
+        "title": "Sidebar",
+        "href": "/components/sidebar",
+        "icon": "sidebar"
+      }
+    ]
+  },
+  {
+    "group": "Styling",
+    "pages": [
+      {
+        "title": "Tailwind CSS Best Practices",
+        "href": "/styling/tailwind-css-best-practices",
+        "icon": "wind"
+      },
+      {
+        "title": "Custom Styles",
+        "href": "/styling/custom-styles",
+        "icon": "paint-brush"
+      }
+    ]
+  },
+  {
+    "group": "Advanced Features",
+    "pages": [
+      {
+        "title": "Custom Hooks",
+        "href": "/advanced-features/custom-hooks",
+        "icon": "hook"
+      },
+      {
+        "title": "Context API",
+        "href": "/advanced-features/context-api",
+        "icon": "grid"
+      },
+      {
+        "title": "State Management",
+        "href": "/advanced-features/state-management",
+        "icon": "database"
+      }
+    ]
+  },
+  {
+    "group": "Deployment",
+    "pages": [
+      {
+        "title": "Build and Deploy",
+        "href": "/deployment/build-and-deploy",
+        "icon": "cloud-upload"
+      },
+      {
+        "title": "Environment Variables",
+        "href": "/deployment/environment-variables",
+        "icon": "settings"
+      }
+    ]
+  },
+  {
+    "group": "Contributing",
+    "pages": [
+      {
+        "title": "Code Guidelines",
+        "href": "/contributing/code-guidelines",
+        "icon": "code"
+      },
+      {
+        "title": "Branching Strategy",
+        "href": "/contributing/branching-strategy",
+        "icon": "git-branch"
+      },
+      {
+        "title": "How to Raise a PR",
+        "href": "/contributing/how-to-raise-a-pr",
+        "icon": "git-pull-request"
+      }
+    ]
+  },
+  {
+    "group": "FAQ",
+    "pages": [
+      {
+        "title": "Common Issues",
+        "href": "/faq/common-issues",
+        "icon": "alert-circle"
+      },
+      {
+        "title": "Troubleshooting",
+        "href": "/faq/troubleshooting",
+        "icon": "tool"
+      }
+    ]
+  }
+  
+]
+}
