@@ -1,0 +1,76 @@
+---
+title: Reusable Input Component
+---
+
+# Reusable Input Component
+
+The `Input` component is a flexible React component designed for creating various types of input fields with customizable styles and behavior. This component is ideal for forms and other interactive elements where user input is required.
+
+## Component Code
+
+```jsx
+import React from 'react';
+
+const Input = ({ id, name, type, value, onChange, className, placeholder }) => (
+  <input
+    id={id}
+    name={name}
+    type={type}
+    value={value}
+    onChange={onChange}
+    className={`w-full px-3 py-2 mt-1 border-[1px] bg-[#F4F4F4] border-[#E5E9E5] rounded-md focus:outline-none focus:border-[#882EFD] focus:ring-[.5px] focus:ring-[#882EFD] ${className}`}
+    placeholder={placeholder}
+    required
+  />
+);
+
+export default Input;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `id`: A unique identifier for the input field.
+  - `name`: The name attribute for the input field, useful for form submission.
+  - `type`: Specifies the type of input (`text`, `password`, `email`, etc.).
+  - `value`: The current value of the input field.
+  - `onChange`: Function to handle changes to the input value.
+  - `className`: Optional additional CSS classes to further style the input.
+  - `placeholder`: Placeholder text for the input field.
+
+- **Functionality**:
+  - The `Input` component is styled using Tailwind CSS utility classes:
+    - `w-full`: Makes the input field take the full width of its container.
+    - `px-3`, `py-2`: Adds padding inside the input field.
+    - `mt-1`: Adds margin at the top of the input field.
+    - `border-[1px]`: Adds a 1px border around the input field.
+    - `bg-[#F4F4F4]`: Sets a light gray background color.
+    - `border-[#E5E9E5]`: Sets a light gray border color.
+    - `rounded-md`: Applies medium rounded corners to the input field.
+    - `focus:outline-none`: Removes the default focus outline.
+    - `focus:border-[#882EFD]`, `focus:ring-[.5px]`, `focus:ring-[#882EFD]`: Adds a custom focus state with a purple border and ring.
+  - The `required` attribute ensures that the input must be filled out before form submission.
+
+## Usage Example
+
+Below is an example of how to use the `Input` component in your MDX file:
+
+```mdx
+<Input
+  id="username"
+  name="username"
+  type="text"
+  value=""
+  onChange={(e) => console.log(e.target.value)}
+  className="text-gray-700"
+  placeholder="Enter your username"
+/>
+```
+
+## Output
+
+The rendered output of the above example would display a text input field with a placeholder "Enter your username" and a custom focus state.
+
+![output](/assets/inputs.png)
+
+This component is ideal for creating consistent and customizable input fields across your application.

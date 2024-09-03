@@ -1,0 +1,51 @@
+---
+title: Reusable Heading Component
+---
+
+
+
+# Reusable Heading Component
+
+The `Heading` component is a versatile React component designed to render headings with varying sizes depending on the screen width. This component is particularly useful in responsive web design, ensuring that the heading size adjusts appropriately across different devices.
+
+## Component Code
+
+```jsx
+import React from 'react';
+
+const Heading = ({ text, className }) => (
+    <h1 className={`font-bold xs:text-[1.5rem] md:text-[1.7rem] lg:text-[2rem] ${className}`}>{text}</h1>
+);
+
+export default Heading;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `text`: The text to be displayed inside the heading.
+  - `className`: Optional additional CSS classes to style the heading further.
+
+- **Functionality**:
+  - The `Heading` component uses a combination of Tailwind CSS utility classes and custom classes to ensure the heading's font size scales depending on the screen size:
+    - `xs:text-[1.5rem]`: Font size is 1.5rem on extra-small screens.
+    - `md:text-[1.7rem]`: Font size is 1.7rem on medium screens.
+    - `lg:text-[2rem]`: Font size is 2rem on large screens.
+  - The `className` prop allows for additional customization if needed.
+
+## Usage Example
+
+Below is an example of how to use the `Heading` component in your MDX file:
+
+```mdx
+<Heading text="Welcome to My Documentation" className="text-blue-600" />
+```
+
+## Output
+
+The rendered output of the above example would display a heading with the text "Welcome to My Documentation" in blue, with a size that adjusts depending on the screen size.
+
+![output](/assets/heading.png)
+
+
+This component is ideal for maintaining consistent heading styles across your application while allowing for flexibility with additional classes.

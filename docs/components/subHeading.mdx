@@ -1,0 +1,45 @@
+---
+title: Reusable Subheading Component
+---
+
+# Reusable Subheading Component
+
+The `Subheading` component is a simple yet flexible React component designed to render a paragraph element (`<p>`) with customizable padding and additional styles. This component is ideal for creating subheadings or any text that requires specific padding or styling.
+
+## Component Code
+
+```jsx
+import React from 'react';
+
+const Subheading = ({ text, className }) => (
+    <p className={`xs:px-4 ${className}`}>{text}</p>
+);
+
+export default Subheading;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `text`: The text to be displayed inside the subheading.
+  - `className`: Optional additional CSS classes to further style the subheading.
+
+- **Functionality**:
+  - The `Subheading` component uses the Tailwind CSS utility class `xs:px-4` to apply padding on the left and right sides of the text on extra-small screens. The `className` prop allows for additional customization if needed.
+  - This component is useful for ensuring consistent padding across subheadings while still allowing for additional styling.
+
+## Usage Example
+
+Below is an example of how to use the `Subheading` component in your MDX file:
+
+```mdx
+<Subheading text="Section Overview" className="text-gray-500" />
+```
+
+## Output
+
+The rendered output of the above example would display a subheading with the text "Section Overview" in gray, with padding applied on extra-small screens.
+
+![output](/assets/subheading.png)
+
+This component is perfect for maintaining consistent styling for subheadings across your application while allowing for flexibility with additional classes.

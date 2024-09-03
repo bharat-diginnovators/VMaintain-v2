@@ -21,33 +21,47 @@ npm -v
 ```
 
 ## Setting Up the Project
-### 1. Create a New Vite Project
-To get started, use the following command to create a new React project with Vite:
+
+### 1. Clone the Repository
+
+To get started, clone the repository from GitHub:
 
 ```bash
-npm create vite@latest my-ats-project --template react
+git clone https://github.com/your-username/your-ats-project.git
 ```
 
-- Replace my-ats-project with your desired project name.
-- The --template react flag tells Vite to set up the project using the React template.
+- Replace `your-username/your-ats-project` with the actual repository URL.
 
- ### 2. Navigate to the Project Directory
-Once the project is created, navigate into the project directory:
+### 2. Navigate to the Project Directory
+
+Once the repository is cloned, navigate into the project directory:
 
 ```bash
-cd my-ats-project
+cd your-ats-project
 ```
-This command will install all the packages required for the project.
+
+### 3. Install Dependencies
+
+Install all the necessary packages by running:
+
+```bash
+npm install
+```
+
+This command will install all the dependencies required for the project.
 
 ## Running the Development Server
+
 To start the development server and see your application in action, run:
+
 ```bash
 npm run dev
 ```
 
-Vite will start a development server and open your project in the default web browser. The server should be running at [http://localhost:5173](http://localhost:5173)
+Vite will start a development server and open your project in the default web browser. The server should be running at [http://localhost:5173](http://localhost:5173).
 
 ## 4. Open the Project in Your Editor
+
 Open the project in your preferred code editor (e.g., Visual Studio Code):
 
 ```bash
@@ -57,9 +71,11 @@ code .
 This command opens the current directory in VS Code.
 
 ## Building for Production
+
 When you're ready to build your project for production, use the following command:
 
 ```bash
 npm run build
 ```
-Vite will bundle your application and output the static files in the dist directory. These files can be deployed to any static hosting service.
+
+Vite will bundle your application and output the static files in the `dist` directory. These files can be deployed to any static hosting service.

@@ -1,0 +1,76 @@
+---
+title: Reusable Checkbox Component
+---
+
+# Reusable Checkbox Component
+
+The `Checkbox` component is a flexible React component designed for creating checkboxes with customizable styles and labels. This component is perfect for forms and other interactive elements where a checkbox input is required.
+
+## Component Code
+
+```jsx
+import React from 'react';
+
+const Checkbox = ({ id, name, checked, onChange, className, label }) => (
+  <div className="flex items-center">
+    <input
+      id={id}
+      name={name}
+      type="checkbox"
+      checked={checked}
+      onChange={onChange}
+      className={`w-4 h-4 border-[1px] border-[#F7F7F8] bg-[#F4F4F4] ${checked? 'focus:!bg-[#882EFD]':''} checked:bg-[#882EFD] focus:ring-transparent checked:hover:bg-[#882EFD] ${className}`}
+    />
+    <label htmlFor={id} className="ml-2 text-sm">
+      {label}
+    </label>
+  </div>
+);
+
+export default Checkbox;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `id`: A unique identifier for the checkbox.
+  - `name`: The name attribute for the checkbox, useful for form submission.
+  - `checked`: Boolean indicating whether the checkbox is checked or not.
+  - `onChange`: Function to handle changes to the checkbox state.
+  - `className`: Optional additional CSS classes to further style the checkbox.
+  - `label`: Text label associated with the checkbox.
+
+- **Functionality**:
+  - The `Checkbox` component is styled using Tailwind CSS utility classes:
+    - `w-4`, `h-4`: Sets the width and height of the checkbox.
+    - `border-[1px]`: Adds a 1px border around the checkbox.
+    - `border-[#F7F7F8]`: Sets a light gray border color.
+    - `bg-[#F4F4F4]`: Sets a light gray background color.
+    - `focus:!bg-[#882EFD]`: Changes background color to purple when focused if checked.
+    - `checked:bg-[#882EFD]`: Sets the background color to purple when the checkbox is checked.
+    - `focus:ring-transparent`: Removes the default focus ring.
+    - `checked:hover:bg-[#882EFD]`: Keeps the background purple on hover when the checkbox is checked.
+  - The `label` is positioned next to the checkbox using flexbox utilities and is styled with a small font size.
+
+## Usage Example
+
+Below is an example of how to use the `Checkbox` component in your MDX file:
+
+```mdx
+<Checkbox
+  id="agree"
+  name="agreement"
+  checked={false}
+  onChange={(e) => console.log(e.target.checked)}
+  className="text-gray-700"
+  label="I agree to the terms and conditions"
+/>
+```
+
+## Output
+
+The rendered output of the above example would display a checkbox with a label "I agree to the terms and conditions" and custom styles.
+
+![output](/assets/checkbox.png)
+
+This component is ideal for creating consistent and customizable checkbox inputs across your application.

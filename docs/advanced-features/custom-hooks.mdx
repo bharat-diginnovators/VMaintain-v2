@@ -1,0 +1,111 @@
+---
+title: Custom Hook for Fetching Data
+---
+
+# useFetch: Custom Hook for Fetching Data
+
+The `useFetch` custom hook is designed to simplify data fetching in your React components. This hook manages the entire lifecycle of a data request, including loading state, error handling, and the fetched data itself.
+
+## Features
+
+- **Ease of use**: Simplifies data fetching logic in components.
+- **Automatic state management**: Handles loading, error, and success states.
+- **Customizable**: Allows passing in different options like request method, headers, and dependencies.
+
+## Usage
+
+### Basic Example
+
+```jsx
+import React from 'react';
+import useFetch from './useFetch';
+
+const ExampleComponent = () => {
+  const { data, loading, error } = useFetch('https://api.example.com/data');
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  return (
+    <div>
+      <h1>Fetched Data</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Hook Definition
+
+```javascript
+import { useState, useEffect } from 'react';
+
+const useFetch = (url, options = {}, deps = []) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, deps);
+
+  return { data, loading, error };
+};
+
+export default useFetch;
+```
+
+### Parameters
+
+- **`url`** (string): The URL to fetch data from.
+- **`options`** (object, optional): An options object to customize the fetch request (e.g., method, headers). Defaults to an empty object.
+- **`deps`** (array, optional): Dependency array that determines when the hook should re-fetch data. Defaults to an empty array.
+
+### Return Values
+
+- **`data`** (any): The data returned by the fetch request.
+- **`loading`** (boolean): Indicates whether the data is still being loaded.
+- **`error`** (object or null): Contains error information if the request fails, otherwise `null`.
+
+### Advanced Usage
+
+You can pass additional options to customize your request:
+
+```jsx
+const { data, loading, error } = useFetch('https://api.example.com/data', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ key: 'value' }),
+}, [dependency1, dependency2]);
+```
+
+In this example, the hook will re-fetch the data whenever `dependency1` or `dependency2` changes.
+
+## Notes
+
+- Ensure the URL and options passed to the hook are correct and secure.
+- Be mindful of the dependencies array to avoid unnecessary re-fetching.
+
+## Conclusion
+
+The `useFetch` hook is a powerful tool that simplifies data fetching in React. By abstracting away the complexity, it allows you to focus on building your application's core features.

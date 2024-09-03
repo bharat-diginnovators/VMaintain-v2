@@ -1,0 +1,72 @@
+---
+title: Reusable Columns Component(Modal)
+---
+
+# Reusable Columns Component(Modal)
+
+The `Columns` component is a customizable React component designed to allow users to select visible columns from a list. This component is ideal for use in tables or data grids where users may want to control which columns are displayed.
+
+## Component Code
+
+```jsx
+import React from 'react';
+import Checkbox from '../../../Core/Checkbox';
+
+const Columns = ({ visibleColumns, setVisibleColumns, totalColumns }) => {
+  const handleCheckboxChange = (column) => {
+    setVisibleColumns((prev) =>
+      prev.includes(column)
+        ? prev.filter((col) => col !== column)
+        : [...prev, column]
+    );
+  };
+
+  return (
+    <div className='w-[160px] relative flex flex-col gap-[1px] z-50 bg-white p-[1px] rounded-sm text-sm'>
+      {totalColumns.map((item, i) => (
+        <div key={i} className='flex gap-2 px-4 py-2 bg-[#F4EBFF] justify-start items-center'>
+          <Checkbox
+            checked={visibleColumns.includes(item)}
+            onChange={() => handleCheckboxChange(item)}
+          />
+          <div>{item}</div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Columns;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `visibleColumns`: An array of currently visible columns.
+  - `setVisibleColumns`: A function to update the list of visible columns.
+  - `totalColumns`: An array of all available columns that can be toggled.
+
+- **Functionality**:
+  - The component renders a list of checkboxes, one for each column in `totalColumns`.
+  - The `handleCheckboxChange` function is called when a checkbox is toggled, updating the `visibleColumns` state.
+  - If a column is checked, it is added to `visibleColumns`; if unchecked, it is removed.
+
+## Usage Example
+
+Below is an example of how to use the `Columns` component in your MDX file:
+
+```mdx
+<Columns
+  visibleColumns={['Column 1', 'Column 2']}
+  setVisibleColumns={(columns) => console.log(columns)}
+  totalColumns={['Column 1', 'Column 2', 'Column 3', 'Column 4']}
+/>
+```
+
+## Output
+
+The rendered output of the above example would display a list of columns with checkboxes, allowing the user to toggle the visibility of each column.
+
+![modal](/assets/modal.png)
+
+This component is ideal for creating a column selection UI in tables or data grids within your application.

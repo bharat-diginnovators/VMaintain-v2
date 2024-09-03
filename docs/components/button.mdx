@@ -1,0 +1,62 @@
+---
+title: Reusable Button Component
+---
+
+# Reusable Button Component
+
+The `Button` component is a versatile React component designed for creating interactive buttons with customizable styles and behavior. This component is ideal for use across various parts of your application where a consistent button design is needed.
+
+## Component Code
+
+```jsx
+import React from 'react';
+
+const Button = ({ text, type, className, onClick, disabled }) => (
+  <button
+    type={type}
+    className={`rounded-md text-md font-semibold px-12 py-2 w-full ${className}`}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {text}
+  </button>
+);
+
+export default Button;
+```
+
+## Component Explanation
+
+- **Props**:
+  - `text`: The text to be displayed inside the button.
+  - `type`: Specifies the button type (`button`, `submit`, `reset`). Defaults to `button` if not provided.
+  - `className`: Optional additional CSS classes to further style the button.
+  - `onClick`: Function to be called when the button is clicked.
+  - `disabled`: Boolean value that, when true, disables the button.
+
+- **Functionality**:
+  - The `Button` component uses Tailwind CSS utility classes for styling:
+    - `rounded-md`: Applies medium rounded corners to the button.
+    - `text-md`: Sets the text size to medium.
+    - `font-semibold`: Applies semi-bold font weight to the text.
+    - `px-12`: Adds horizontal padding.
+    - `py-2`: Adds vertical padding.
+    - `w-full`: Makes the button take the full width of its container.
+  - The `className` prop allows for additional customization.
+  - The `disabled` prop disables the button when set to `true`, preventing user interaction.
+
+## Usage Example
+
+Below is an example of how to use the `Button` component in your MDX file:
+
+```mdx
+<Button text="Click Me" type="button" className="bg-blue-500 text-white hover:bg-blue-700" onClick={() => alert('Button Clicked!')} />
+```
+
+## Output
+
+The rendered output of the above example would display a button with the text "Click Me" in white on a blue background, with a hover effect that darkens the background.
+
+![output](/assets/button.png)
+
+This component is ideal for maintaining consistent button styles across your application while allowing for flexibility with additional classes and functionality.
