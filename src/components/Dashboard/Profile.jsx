@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setProfileImage } from "../../Slices/profileSlice";
 import profile from "../../assets/profile.svg";
 import upload from "../../assets/Icons/upload.svg";
 import Input from "../../Core/Input";
 import Button from "../../Core/Button";
-import Dropdown from "../../Core/Dropdown"; 
+import Dropdown from "../../Core/Dropdown";
 
 const Profile = () => {
+  const dispatch = useDispatch();
+  const storedProfileImage = useSelector((state) => state.profile.profileImage);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,7 +21,8 @@ const Profile = () => {
     organizationName: "",
   });
 
-  const [profileImage, setProfileImage] = useState(profile);
+  const [profileImage, setLocalProfileImage] = useState(storedProfileImage || profile);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +41,7 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
   };
 
   const handleImageUpload = (e) => {
@@ -44,11 +49,17 @@ const Profile = () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        setProfileImage(reader.result);
+        const imageDataUrl = reader.result;
+        if (imageDataUrl) {
+          setLocalProfileImage(imageDataUrl); // Update local state
+          dispatch(setProfileImage(imageDataUrl)); // Store image in Redux
+        }
       };
       reader.readAsDataURL(file);
     }
   };
+  
+  
 
   const countryOptions = ["USA", "Canada", "UK", "Germany"];
   const cityOptions = ["New York", "Toronto", "London", "Berlin"];
@@ -56,31 +67,32 @@ const Profile = () => {
   return (
     <section className="w-full p-2 lg:mb-16">
       <h1 className="font-semibold text-lg py-2">Profile</h1>
-      <div className="flex justify-start items-start  w-full rounded-sm overflow-hidden custom-shadow xs:flex-wrap md:flex-col lg:flex-row">
-          
-          {/* Upload profile images  */}
-        <div className="xs:w-full lg:w-[15%] -mr-6 mt-6 ">  
-          <div className="xs:justify-center w-full flex md:justify-center lg:justify-center lg:pl-2  py-2  ">
+      <div className="flex justify-start items-start w-full rounded-sm overflow-hidden custom-shadow xs:flex-wrap md:flex-col lg:flex-row">
+        
+        {/* Upload profile images  */}
+        <div className="xs:w-full lg:w-[15%] -mr-6 mt-6">
+          <div className="xs:justify-center w-full flex md:justify-center lg:justify-center lg:pl-2 py-2">
             <div className="relative">
-            <img src={profileImage} alt="profile" className="w-24 h-24 object-cover rounded-full border-2 border-[#882EFD]" />
-            <label className="absolute bottom-0 right-1 cursor-pointer">
-              <img src={upload} alt="upload" />
-              <input 
-                type="file" 
-                accept="image/*" 
-                onChange={handleImageUpload} 
-                className="hidden" 
-              />
-            </label>
+              <img src={profileImage} alt="profile" className="w-24 h-24 object-cover rounded-full border-2 border-[#882EFD]" />
+              <label className="absolute bottom-0 right-1 cursor-pointer">
+                <img src={upload} alt="upload" />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+              </label>
             </div>
-           
           </div>
         </div>
-        <div className="xs:w-full md:w-[85%] p-4 ">
-        <form
+
+        <div className="xs:w-full md:w-[85%] p-4">
+          <form
             className="space-y-4 xs:px-2 md:px-10 py-4 flex flex-col w-full rounded-sm overflow-hidden"
             onSubmit={handleSubmit}
           >
+            {/* Form Fields */}
             <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="firstName" className="block">
@@ -109,6 +121,7 @@ const Profile = () => {
                 />
               </div>
             </div>
+
             <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="email" className="block">
@@ -137,6 +150,7 @@ const Profile = () => {
                 />
               </div>
             </div>
+
             <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="country" className="block">
@@ -162,10 +176,10 @@ const Profile = () => {
                   placeholder=""
                   textColor=""
                   menuWidth="xs:w-1/2 lg:w-2/6"
-
                 />
               </div>
             </div>
+
             <div className="flex gap-2 w-full xs:flex-wrap lg:flex-nowrap">
               <div className="w-full">
                 <label htmlFor="phoneNumber" className="block">
@@ -194,8 +208,8 @@ const Profile = () => {
                 />
               </div>
             </div>
-            <div className="pt-4 py-1 self-end">
-              <Button text="Save" className="bg-[#882EFD] text-white" />
+            <div className="py-2 self-end">
+              <Button type="submit" text="Save"  className="bg-[#882EFD] text-[#fff]"/>
             </div>
           </form>
         </div>

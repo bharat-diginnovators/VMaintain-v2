@@ -4,11 +4,12 @@ import Pie from "../assets/Icons/pie.svg";
 import user from "../assets/Icons/user.svg";
 import setting from "../assets/Icons/setting.svg";
 import glob from "../assets/Icons/glob.svg";
-import { useSidebar } from "../utils/context";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
-  const { isSidebarOpen } = useSidebar();
+
   const location = useLocation();
+  const isToggled = useSelector((state)=>state.toggle.isToggled)
 
   const getActiveClass = (path) => {
     return location.pathname === path ? "bg-[#E7D5FF]" : "";
@@ -17,7 +18,7 @@ const Sidebar = () => {
   return (
     <aside
       className={`${
-        isSidebarOpen
+        isToggled
           ? "w-60 translate-x-0 xs:fixed  lg:sticky "
           : "w-16 xs:w-[0] xs:-translate-x-10 lg:w-[5.5rem] lg:translate-x-0 xs:fixed lg:sticky"
       } top-[4.4rem] left-0 min-h-[90svh] px-5 py-6 bg-[#F7F7F8] transition-all duration-300 ease-in-out z-50 flex flex-col gap-2`}
@@ -33,7 +34,7 @@ const Sidebar = () => {
           >
             <img src={Pie} alt="dashboard" />
           </div>
-          {isSidebarOpen && (
+          {isToggled && (
             <div>
               <h2 className="whitespace-nowrap">Dashboard</h2>
             </div>
@@ -51,7 +52,7 @@ const Sidebar = () => {
           >
             <img src={glob} alt="sites" />
           </div>
-          {isSidebarOpen && (
+          {isToggled && (
             <div>
               <h2 className="whitespace-nowrap">Sites</h2>
             </div>
@@ -69,7 +70,7 @@ const Sidebar = () => {
           >
             <img src={user} alt="teams" />
           </div>
-          {isSidebarOpen && (
+          {isToggled && (
             <div>
               <h2 className="whitespace-nowrap">Teams</h2>
             </div>
@@ -87,7 +88,7 @@ const Sidebar = () => {
           >
             <img src={setting} alt="settings" />
           </div>
-          {isSidebarOpen && (
+          {isToggled && (
             <div>
               <h2 className="whitespace-nowrap">Settings</h2>
             </div>
